@@ -1,20 +1,38 @@
 {
  "cells": [
   {
-   "cell_type": "markdown",
-   "id": "62cdf6cc",
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "3462f614",
    "metadata": {
     "_cell_guid": "b1076dfc-b9ad-4769-8c92-a6c4dae69d19",
     "_uuid": "8f2839f25d086af736a60e9eeb907d3b93b6e0e5",
+    "execution": {
+     "iopub.execute_input": "2024-08-21T04:37:35.829986Z",
+     "iopub.status.busy": "2024-08-21T04:37:35.829494Z",
+     "iopub.status.idle": "2024-08-21T04:37:36.819200Z",
+     "shell.execute_reply": "2024-08-21T04:37:36.817859Z"
+    },
     "papermill": {
-     "duration": 0.002078,
-     "end_time": "2024-08-21T04:20:52.208297",
+     "duration": 0.997927,
+     "end_time": "2024-08-21T04:37:36.822322",
      "exception": false,
-     "start_time": "2024-08-21T04:20:52.206219",
+     "start_time": "2024-08-21T04:37:35.824395",
      "status": "completed"
     },
     "tags": []
    },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "/kaggle/input/playground-series-s4e8/sample_submission.csv\n",
+      "/kaggle/input/playground-series-s4e8/train.csv\n",
+      "/kaggle/input/playground-series-s4e8/test.csv\n"
+     ]
+    }
+   ],
    "source": [
     "# This Python 3 environment comes with many helpful analytics libraries installed\n",
     "# It is defined by the kaggle/python Docker image: https://github.com/kaggle/docker-python\n",
@@ -37,14 +55,69 @@
   },
   {
    "cell_type": "code",
+   "execution_count": 2,
+   "id": "898782b0",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-08-21T04:37:36.830092Z",
+     "iopub.status.busy": "2024-08-21T04:37:36.829533Z",
+     "iopub.status.idle": "2024-08-21T04:37:38.295309Z",
+     "shell.execute_reply": "2024-08-21T04:37:38.294008Z"
+    },
+    "papermill": {
+     "duration": 1.472929,
+     "end_time": "2024-08-21T04:37:38.298344",
+     "exception": false,
+     "start_time": "2024-08-21T04:37:36.825415",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "import numpy as np\n",
+    "import pandas as pd\n",
+    "import matplotlib.pyplot as plt\n",
+    "import seaborn as sns"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "5843c1d3",
+   "metadata": {
+    "execution": {
+     "iopub.execute_input": "2024-08-21T04:37:38.305787Z",
+     "iopub.status.busy": "2024-08-21T04:37:38.305410Z",
+     "iopub.status.idle": "2024-08-21T04:37:59.131304Z",
+     "shell.execute_reply": "2024-08-21T04:37:59.130136Z"
+    },
+    "papermill": {
+     "duration": 20.832893,
+     "end_time": "2024-08-21T04:37:59.134128",
+     "exception": false,
+     "start_time": "2024-08-21T04:37:38.301235",
+     "status": "completed"
+    },
+    "tags": []
+   },
+   "outputs": [],
+   "source": [
+    "mushroom_data= pd.read_csv(\"/kaggle/input/playground-series-s4e8/sample_submission.csv\")\n",
+    "train_data= pd.read_csv(\"/kaggle/input/playground-series-s4e8/train.csv\")\n",
+    "test_data= pd.read_csv(\"/kaggle/input/playground-series-s4e8/test.csv\")"
+   ]
+  },
+  {
+   "cell_type": "code",
    "execution_count": null,
-   "id": "83da4021",
+   "id": "fed6b588",
    "metadata": {
     "papermill": {
-     "duration": 0.001249,
-     "end_time": "2024-08-21T04:20:52.211319",
+     "duration": 0.002639,
+     "end_time": "2024-08-21T04:37:59.139829",
      "exception": false,
-     "start_time": "2024-08-21T04:20:52.210070",
+     "start_time": "2024-08-21T04:37:59.137190",
      "status": "completed"
     },
     "tags": []
@@ -63,6 +136,7 @@
      "sourceType": "competition"
     }
    ],
+   "dockerImageVersionId": 30746,
    "isGpuEnabled": false,
    "isInternetEnabled": true,
    "language": "python",
@@ -87,14 +161,14 @@
   },
   "papermill": {
    "default_parameters": {},
-   "duration": 3.312826,
-   "end_time": "2024-08-21T04:20:52.633063",
+   "duration": 27.602404,
+   "end_time": "2024-08-21T04:38:00.165765",
    "environment_variables": {},
    "exception": null,
    "input_path": "__notebook__.ipynb",
    "output_path": "__notebook__.ipynb",
    "parameters": {},
-   "start_time": "2024-08-21T04:20:49.320237",
+   "start_time": "2024-08-21T04:37:32.563361",
    "version": "2.5.0"
   }
  },
